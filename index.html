@@ -8,78 +8,133 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-    }
-
-    .sidebar {
+      display: flex;
       height: 100vh;
-      width: 220px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #2c3e50;
-      color: white;
-      padding-top: 20px;
-      text-align: center;
+      background: #f4f6f9;
     }
 
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #2a5298;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      align-items: center;
+    }
     .sidebar img {
-      width: 150px;
+      width: 160px;
       margin-bottom: 20px;
     }
-
     .sidebar a {
-      display: block;
-      color: white;
-      padding: 12px;
+      color: #fff;
       text-decoration: none;
+      margin: 10px 0;
+      display: block;
+      padding: 10px;
+      border-radius: 6px;
+      transition: 0.3s;
+      text-align: center;
+      width: 100%;
     }
-
     .sidebar a:hover {
-      background-color: #34495e;
+      background: #1e3c72;
     }
 
+    /* Main content */
     .main {
-      margin-left: 220px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #fff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2a5298;
+    }
+
+    .header .tagline {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .content {
       padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #ecf0f1;
+      background: #fff;
       padding: 20px;
-      margin: 15px 0;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
-    h2 {
-      margin-top: 0;
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #2a5298;
+    }
+
+    .card p {
+      font-size: 24px;
+      margin: 10px 0 0;
+      font-weight: bold;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
+  <!-- Sidebar -->
   <div class="sidebar">
     <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/main/assets/Logo%20TUNGGAL.png" alt="TUNGGAL Logo">
     <a href="#">Dashboard</a>
-    <a href="#">Data Kegiatan</a>
+    <a href="#">Kegiatan</a>
+    <a href="#">RKA</a>
+    <a href="#">Laporan</a>
     <a href="#">Data Sekolah</a>
     <a href="#">Data Guru</a>
   </div>
 
+  <!-- Main content -->
   <div class="main">
-    <h2>Dashboard</h2>
-    <div class="card">
-      <h3>📊 Statistik Kegiatan</h3>
-      <p>Ringkasan kegiatan terbaru dan statusnya.</p>
+    <div class="header">
+      <div class="title">Dashboard</div>
+      <div class="tagline">Satu Aplikasi, Semua Kegiatan</div>
     </div>
 
-    <div class="card">
-      <h3>🏫 Data Sekolah</h3>
-      <p>Akses cepat ke data sekolah yang terdaftar.</p>
-    </div>
-
-    <div class="card">
-      <h3>👨‍🏫 Data Guru</h3>
-      <p>Lihat daftar guru yang berpartisipasi dalam kegiatan.</p>
+    <div class="content">
+      <div class="card">
+        <h3>Total Kegiatan</h3>
+        <p>12</p>
+      </div>
+      <div class="card">
+        <h3>Total RKA</h3>
+        <p>5</p>
+      </div>
+      <div class="card">
+        <h3>Laporan Selesai</h3>
+        <p>8</p>
+      </div>
+      <div class="card">
+        <h3>Data Sekolah</h3>
+        <p>23</p>
+      </div>
     </div>
   </div>
 
