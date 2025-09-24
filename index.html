@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TUNGGAL - Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #f4f6f9;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #2a5298;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      margin: 0 0 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 10px 0;
+      display: block;
+      padding: 10px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      background: #1e3c72;
+    }
+
+    /* Main content */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #fff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2a5298;
+    }
+
+    .header .tagline {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .content {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #2a5298;
+    }
+
+    .card p {
+      font-size: 24px;
+      margin: 10px 0 0;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>TUNGGAL</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Kegiatan</a>
+    <a href="#">RKA</a>
+    <a href="#">Laporan</a>
+    <a href="#">Data Sekolah</a>
+    <a href="#">Data Guru</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <div class="header">
+      <div class="title">Dashboard</div>
+      <div class="tagline">Satu Aplikasi, Semua Kegiatan</div>
+    </div>
+
+    <div class="content">
+      <div class="card">
+        <h3>Total Kegiatan</h3>
+        <p>12</p>
+      </div>
+      <div class="card">
+        <h3>Total RKA</h3>
+        <p>5</p>
+      </div>
+      <div class="card">
+        <h3>Laporan Selesai</h3>
+        <p>8</p>
+      </div>
+      <div class="card">
+        <h3>Data Sekolah</h3>
+        <p>23</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
