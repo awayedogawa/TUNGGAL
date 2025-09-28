@@ -3,143 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TUNGGAL - Dashboard</title>
+  <title>Login - TUNGGAL</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
       background: #f4f6f9;
     }
 
-    /* Sidebar */
-    .sidebar {
-      width: 220px;
+    .login-container {
       background: #fff;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      border-right: 1px solid #ddd;
-    }
-
-    .sidebar img {
-      width: 140px;
-      margin: 0 auto 20px;
-      display: block;
-    }
-
-    .sidebar a {
-      color: #333;
-      text-decoration: none;
-      margin: 10px 0;
-      display: block;
-      padding: 12px;
-      border-radius: 6px;
-      font-weight: bold; /* Tebalkan */
-      transition: 0.3s;
-    }
-
-    .sidebar a:hover {
-      background: #2a5298;
-      color: #fff;
-    }
-
-    /* Main content */
-    .main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .header {
-      background: #fff;
-      padding: 15px 20px;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      align-items: center;
-    }
-
-    .header img {
-      height: 40px;
-      margin-right: 15px;
-    }
-
-    .header .title {
-      font-size: 22px;
-      font-weight: bold;
-      color: #2a5298;
-    }
-
-    .content {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #fff;
-      padding: 20px;
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
       text-align: center;
     }
 
-    .card h3 {
-      margin: 0;
-      font-size: 18px;
-      color: #2a5298;
+    .login-container img {
+      max-width: 120px;
+      margin-bottom: 10px;
     }
 
-    .card p {
-      font-size: 24px;
-      margin: 10px 0 0;
+    h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
       font-weight: bold;
-      color: #333;
+    }
+
+    .admin-btn {
+      background-color: #3498db;
+      color: #fff;
+    }
+
+    .admin-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .pelaksana-btn {
+      background-color: #95a5a6;
+      color: #fff;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
-
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/main/assets/Logo%20Beraksi%20Tanbu.png" alt="Logo Beraksi Tanbu">
-    <a href="#">Dashboard</a>
-    <a href="kegiatan.html">Kegiatan</a> <!-- Tombol Kegiatan Aktif -->
-    <a href="#">RKA</a>
-    <a href="#">Laporan</a>
-    <a href="#">Data Sekolah</a>
-    <a href="#">Data Guru</a>
+  <div class="login-container">
+    <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20Beraksi%20Tanbu.png" alt="Logo Beraksi Tanbu">
+    <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20TUNGGAL.png" alt="Logo TUNGGAL">
+    <h2>Login</h2>
+    
+    <input type="password" id="adminPassword" placeholder="Masukkan Password Admin">
+    <button class="admin-btn" onclick="loginAdmin()">Login Admin</button>
+    
+    <button class="pelaksana-btn" disabled>Login Pelaksana</button>
   </div>
 
-  <!-- Main content -->
-  <div class="main">
-    <div class="header">
-      <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/main/assets/Logo%20TUNGGAL.png" alt="Logo TUNGGAL">
-      <div class="title">Dashboard</div>
-    </div>
-
-    <div class="content">
-      <div class="card">
-        <h3>Total Kegiatan</h3>
-        <p>12</p>
-      </div>
-      <div class="card">
-        <h3>Total RKA</h3>
-        <p>5</p>
-      </div>
-      <div class="card">
-        <h3>Laporan Selesai</h3>
-        <p>8</p>
-      </div>
-      <div class="card">
-        <h3>Data Sekolah</h3>
-        <p>23</p>
-      </div>
-    </div>
-  </div>
-
+  <script>
+    function loginAdmin() {
+      const password = document.getElementById("adminPassword").value;
+      if (password === "1986") {
+        window.location.href = "index.html";
+      } else {
+        alert("Password salah!");
+      }
+    }
+  </script>
 </body>
 </html>
