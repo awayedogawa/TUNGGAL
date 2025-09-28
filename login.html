@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - TUNGGAL</title>
+  <title>Login</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background: #f4f6f9;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -17,83 +17,77 @@
 
     .login-container {
       background: #fff;
-      padding: 40px 30px;
+      padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      width: 350px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: center;
-      animation: fadeIn 0.6s ease-in-out;
+      width: 350px;
     }
 
-    /* Logo Beraksi Tanbu */
-    .logo-tanbu {
-      width: 160px;
-      margin: 10px auto;
-      display: block;
+    .login-container img {
+      max-width: 150px;
+      margin-bottom: 15px;
     }
 
-    /* Logo TUNGGAL */
-    .logo-tunggal {
-      width: 120px;
-      margin: 10px auto;
-      display: block;
-    }
-
-    .login-container h2 {
-      margin: 15px 0 20px;
+    h2 {
+      margin-bottom: 20px;
       color: #2a5298;
     }
 
-    .login-container button {
+    input[type="password"] {
       width: 100%;
-      padding: 12px;
-      margin-top: 15px;
-      border: none;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
       border-radius: 8px;
-      background: #2a5298;
-      color: #fff;
       font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
     }
 
-    .login-container button:hover {
+    .btn {
+      background: #2a5298;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
       background: #1e3c72;
     }
 
-    .login-container button:disabled {
-      background: #aaa;
+    .btn-disabled {
+      background: #ccc;
       cursor: not-allowed;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 <body>
 
   <div class="login-container">
-    <!-- Logo Beraksi Tanbu -->
-    <img class="logo-tanbu" src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20Beraksi%20Tanbu.png" alt="Logo Beraksi Tanbu">
-
-    <!-- Logo TUNGGAL -->
-    <img class="logo-tunggal" src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20TUNGGAL.png" alt="Logo TUNGGAL">
-    
+    <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20Beraksi%20Tanbu.png" alt="Logo Beraksi Tanbu">
+    <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20TUNGGAL.png" alt="Logo TUNGGAL">
     <h2>Login</h2>
 
-    <!-- Tombol Login -->
-    <button onclick="loginAdmin()">Login Admin</button>
-    <button disabled>Login Pelaksana</button>
+    <!-- Input Password untuk Admin -->
+    <input type="password" id="adminPassword" placeholder="Masukkan Password Admin">
+
+    <!-- Tombol Login Admin -->
+    <button class="btn" onclick="loginAdmin()">Login Admin</button>
+
+    <!-- Tombol Login Pelaksana (nonaktif sementara) -->
+    <button class="btn btn-disabled" disabled>Login Pelaksana</button>
   </div>
 
   <script>
     function loginAdmin() {
-      const password = prompt("Masukkan password Admin:");
+      const password = document.getElementById("adminPassword").value.trim();
       if (password === "1986") {
-        window.location.href = "index.html";
-      } else if (password !== null) {
+        window.location.href = "index.html"; // langsung ke dashboard
+      } else {
         alert("Password salah!");
       }
     }
