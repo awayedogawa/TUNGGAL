@@ -58,10 +58,22 @@
       align-items: center;
     }
 
-    .header .title {
-      font-size: 22px;
-      font-weight: bold;
-      color: #2a5298;
+    .header .title img {
+      height: 40px;
+    }
+
+    .logout-btn {
+      background: #2a5298;
+      color: #fff;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .logout-btn:hover {
+      background: #1e3c72;
     }
 
     .content {
@@ -110,8 +122,9 @@
   <div class="main">
     <div class="header">
       <div class="title">
-        <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20TUNGGAL.png" alt="Logo TUNGGAL" style="height:40px;">
+        <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20TUNGGAL.png" alt="Logo TUNGGAL">
       </div>
+      <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
 
     <div class="content">
@@ -135,8 +148,14 @@
   </div>
 
   <script>
-    // Cek apakah user sudah login
-    if (!localStorage.getItem("isLoggedIn")) {
+    // cek status login
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+
+    // fungsi logout
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
       window.location.href = "login.html";
     }
   </script>
