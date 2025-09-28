@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>TUNGGAL - Login</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f6f9;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
 
     .login-container {
       background: #fff;
       padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 360px;
       text-align: center;
-      width: 350px;
     }
 
     .login-container img {
-      max-width: 150px;
-      margin-bottom: 15px;
+      max-width: 120px;
+      margin-bottom: 10px;
     }
 
-    h2 {
+    .login-container h2 {
       margin-bottom: 20px;
       color: #2a5298;
     }
@@ -37,61 +38,78 @@
     input[type="password"] {
       width: 100%;
       padding: 10px;
-      margin: 15px 0;
+      margin: 10px 0 20px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 6px;
+      font-size: 14px;
     }
 
     .btn {
-      background: #2a5298;
-      color: #fff;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      display: block;
       width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
       font-size: 16px;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .btn:hover {
+    .btn-admin {
+      background: #2a5298;
+      color: #fff;
+    }
+    .btn-admin:hover {
       background: #1e3c72;
     }
 
-    .btn-disabled {
+    .btn-pelaksana {
       background: #ccc;
+      color: #666;
       cursor: not-allowed;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
     }
   </style>
 </head>
 <body>
-
   <div class="login-container">
-    <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20Beraksi%20Tanbu.png" alt="Logo Beraksi Tanbu">
+    <!-- Logo Beraksi Tanbu -->
+    <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20Beraksi%20Tanbu.png" alt="Logo Beraksi Tanbu" style="max-width: 160px;">
+    <!-- Logo TUNGGAL -->
     <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20TUNGGAL.png" alt="Logo TUNGGAL">
+
     <h2>Login</h2>
 
-    <!-- Input Password untuk Admin -->
-    <input type="password" id="adminPassword" placeholder="Masukkan Password Admin">
+    <input type="password" id="password" placeholder="Masukkan Password">
+    <button class="btn btn-admin" onclick="loginAdmin()">Login Admin</button>
+    <button class="btn btn-pelaksana" disabled>Login Pelaksana</button>
 
-    <!-- Tombol Login Admin -->
-    <button class="btn" onclick="loginAdmin()">Login Admin</button>
-
-    <!-- Tombol Login Pelaksana (nonaktif sementara) -->
-    <button class="btn btn-disabled" disabled>Login Pelaksana</button>
+    <p class="error" id="error-msg">Password salah, coba lagi.</p>
   </div>
 
   <script>
     function loginAdmin() {
-      const password = document.getElementById("adminPassword").value.trim();
+      const password = document.getElementById("password").value;
       if (password === "1986") {
-        window.location.href = "index.html"; // langsung ke dashboard
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "index.html";
       } else {
-        alert("Password salah!");
+        document.getElementById("error-msg").style.display = "block";
       }
     }
-  </script>
 
+    // Kalau sudah login, langsung ke dashboard
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
