@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TUNGGAL - RKA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #f4f6f9;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #fff;
+      color: #2a5298;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+    .sidebar img {
+      width: 120px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    .sidebar a {
+      color: #2a5298;
+      text-decoration: none;
+      margin: 10px 0;
+      display: block;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: #2a5298;
+      color: #fff;
+    }
+
+    /* Main content */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #fff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2a5298;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 15px;
+      font-size: 18px;
+      color: #2a5298;
+    }
+
+    .card table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .card table th,
+    .card table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .card table th {
+      background: #f4f6f9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #2a5298;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .btn:hover {
+      background: #1e3c72;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/refs/heads/main/assets/Logo%20Beraksi%20Tanbu.png" alt="Logo">
+    <a href="index.html">Dashboard</a>
+    <a href="kegiatan.html">Kegiatan</a>
+    <a href="rka.html" class="active">RKA</a>
+    <a href="laporan.html">Laporan</a>
+    <a href="data-sekolah.html">Data Sekolah</a>
+    <a href="data-guru.html">Data Guru</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <div class="header">
+      <div class="title">RKA</div>
+    </div>
+
+    <div class="content">
+      <a href="#" class="btn">+ Tambah RKA</a>
+
+      <div class="card">
+        <h3>Daftar RKA</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama RKA</th>
+              <th>Tanggal</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Peningkatan Sarana Sekolah</td>
+              <td>01/09/2025</td>
+              <td>Disetujui</td>
+              <td><a href="#">Detail</a></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Workshop Guru</td>
+              <td>15/09/2025</td>
+              <td>Proses</td>
+              <td><a href="#">Detail</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
