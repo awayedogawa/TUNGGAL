@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TUNGGAL - Kegiatan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #f4f6f9;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #fff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar img {
+      width: 140px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .sidebar a {
+      color: #333;
+      text-decoration: none;
+      margin: 10px 0;
+      display: block;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #2a5298;
+      color: #fff;
+    }
+
+    /* Highlight menu aktif */
+    .sidebar a.active {
+      background: #2a5298;
+      color: #fff;
+    }
+
+    /* Main content */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #fff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+    }
+
+    .header img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .header .title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2a5298;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #2a5298;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    table th, table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    table th {
+      background: #2a5298;
+      color: #fff;
+    }
+
+    table tr:hover {
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/main/assets/Logo%20Beraksi%20Tanbu.png" alt="Logo Beraksi Tanbu">
+    <a href="index.html">Dashboard</a>
+    <a href="kegiatan.html" class="active">Kegiatan</a>
+    <a href="#">RKA</a>
+    <a href="#">Laporan</a>
+    <a href="#">Data Sekolah</a>
+    <a href="#">Data Guru</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <div class="header">
+      <img src="https://raw.githubusercontent.com/awayedogawa/TUNGGAL/main/assets/Logo%20TUNGGAL.png" alt="Logo TUNGGAL">
+      <div class="title">Kegiatan</div>
+    </div>
+
+    <div class="content">
+      <h2>Daftar Kegiatan</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Kegiatan</th>
+            <th>Tanggal</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Workshop Guru</td>
+            <td>12 Jan 2025</td>
+            <td>Selesai</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Rapat Koordinasi</td>
+            <td>20 Jan 2025</td>
+            <td>Berjalan</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Pelatihan IT</td>
+            <td>05 Feb 2025</td>
+            <td>Menunggu</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
